@@ -11,7 +11,7 @@ public class SnakeAndLadder
 		int ladder = 2;
 		//int snake = 3;
 		Random random = new Random();
-		while(startPosition <= 100)
+		while(startPosition < 100)
 		{
 			int condition = random.nextInt(4-1)+1;
 			int dice = random.nextInt(7-1)+1;
@@ -24,6 +24,10 @@ public class SnakeAndLadder
 			{
 				System.out.println("You got Ladder!");
 				startPosition+=dice;
+				if(startPosition > 100)
+				{
+					startPosition-=dice;
+				}
 			}
 			else
 			{
